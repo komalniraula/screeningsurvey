@@ -1,0 +1,144 @@
+{
+  "screenings": [
+    {
+      "id": "gestational_diabetes",
+      "title": "Gestational Diabetes",
+      "criteria": {
+        "gender": "Female",
+        "pregnant": true,
+        "weeksPregnantRange": [24, 28]
+      },
+      "recommendation": [
+        "Screen at 24 weeks of pregnancy (1-hour glucose tolerance test).",
+        "If test is positive, do a 3-hour glucose tolerance test."
+      ]
+    },
+    {
+      "id": "strep_b",
+      "title": "Strep Agalactiae (Group B Strep)",
+      "criteria": {
+        "gender": "Female",
+        "pregnant": true,
+        "weeksPregnantRange": [35, 37]
+      },
+      "recommendation": [
+        "Screen at 35-37 weeks of pregnancy."
+      ]
+    },
+    {
+      "id": "osteoporosis_women",
+      "title": "Osteoporosis",
+      "criteria": {
+        "gender": "Female",
+        "minAge": 65
+      },
+      "recommendation": [
+        "Screen with DEXA scan (bone density)."
+      ]
+    },
+    {
+      "id": "lung_cancer",
+      "title": "Lung Cancer",
+      "criteria": {
+        "minAge": 50,
+        "maxAge": 80,
+        "smoker": true,
+        "packYears": 20,
+        "quitWithinYears": 15
+      },
+      "recommendation": [
+        "Screen annually with low-dose CT (up to 3 times)."
+      ]
+    },
+    {
+      "id": "ibd_colon_cancer",
+      "title": "Inflammatory Bowel Disease (Colon Cancer)",
+      "criteria": {
+        "requiresCondition": "Inflammatory Bowel Disease"
+      },
+      "specialRules": {
+        "diagnosisOffset": 8,
+        "pscImmediate": true
+      },
+      "recommendation": [
+        "Screen 8 years after IBD diagnosis UNLESS patient has PSC (then start at diagnosis).",
+        "Follow up every 1-2 years."
+      ]
+    },
+    {
+      "id": "colon_cancer_general",
+      "title": "Colon Cancer (General Population)",
+      "criteria": {
+        "minAge": 45,
+        "maxAge": 75
+      },
+      "recommendation": [
+        "Colonoscopy every 10 years OR",
+        "Flexible sigmoidoscopy every 5 years OR",
+        "Flexible sigmoidoscopy every 10 years with FIT annually OR",
+        "Fecal occult blood test/FIT every year OR",
+        "CT colonography every 5 years.",
+        "If any test is positive, do colonoscopy with biopsy."
+      ]
+    },
+    {
+      "id": "breast_cancer",
+      "title": "Breast Cancer",
+      "criteria": {
+        "gender": "Female",
+        "minAge": 50,
+        "maxAge": 75
+      },
+      "recommendation": [
+        "Screen with mammogram every 2 years."
+      ]
+    },
+    {
+      "id": "cervical_cancer",
+      "title": "Cervical Cancer",
+      "criteria": {
+        "gender": "Female",
+        "minAge": 30,
+        "maxAge": 65
+      },
+      "recommendation": [
+        "Pap smear + HPV co-testing every 5 years OR Pap smear alone every 3 years OR HPV testing every 5 years.",
+        "Stop screening at 65 if no history of cervical dysplasia/cancer and 3 negative pap smears in a row."
+      ]
+    },
+    {
+      "id": "hep_c",
+      "title": "Hepatitis C (One-time Screening)",
+      "criteria": {
+        "minAge": 18,
+        "maxAge": 79
+      },
+      "recommendation": [
+        "One-time Hep C screening if never done before."
+      ]
+    },
+    {
+      "id": "metabolic_hypertension",
+      "title": "Hypertension Screening",
+      "criteria": {
+        "minAge": 18
+      },
+      "recommendation": [
+        "Age 18-40: every 3-5 years.",
+        "After 40: every 1-2 years."
+      ]
+    },
+    {
+      "id": "hiv_pregnancy",
+      "title": "HIV Screening",
+      "criteria": {
+        "gender": "Female",
+        "pregnant": true
+      },
+      "recommendation": [
+        "Screen at first prenatal visit.",
+        "Retest in the 3rd trimester."
+      ]
+    }    
+  ]
+}

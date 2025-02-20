@@ -1,0 +1,217 @@
+/* Global resets and CSS variables */
+:root {
+  --bg-color: #f5f5f5;
+  --white: #fff;
+  --primary: #007bff;
+  --primary-hover: #0056b3;
+  --border-color: #ccc;
+  --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+}
+
+/* Layout Containers */
+.app-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;     /* allows expansion beyond viewport height */
+  background-color: var(--bg-color);
+  overflow-y: auto;      /* scrolling if content grows */
+}
+
+.form-container,
+.results {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 40px;
+}
+
+.form-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.results {
+  display: none;
+  width: 40%;
+}
+
+/* Layout when form is submitted */
+.submitted {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  /* min-height: 100vh;   only if you really need it here, otherwise omit */
+  /* no fixed height so it won't clip */
+}
+
+.submitted .results {
+  display: block;
+}
+
+.submitted .form-container {
+  margin: 0;
+}
+
+/* Survey Container */
+.survey-container {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+/* Horizontal rule styling */
+hr {
+  margin: 20px 0;
+  border: 0;
+  height: 1px;
+  background-color: #ddd;
+}
+
+/* Section styling */
+.section {
+  margin-bottom: 20px;
+}
+
+.section label {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+/* Input container */
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Input styles */
+.small-input {
+  width: 25%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.age-label {
+  font-size: 16px;
+}
+
+/* Spacing for pregnancy section */
+.pregnancy-spacing {
+  margin-top: 20px;
+}
+
+/* Checkbox group */
+.checkbox-title {
+  font-weight: bold;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.checkbox-item input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+}
+
+.checkbox-item label {
+  flex: 1;
+  font-weight: normal;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* Radio options */
+.radio-options {
+  display: flex;
+  gap: 20px;
+}
+
+.radio-options label {
+  font-weight: normal;
+}
+
+/* Button styling */
+button {
+  padding: 12px;
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Results styling */
+.results ul {
+  list-style: disc inside;
+  margin: 0;
+  padding: 0;
+}
+
+.results p {
+  font-style: italic;
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+  }
+
+  .form-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .results {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .checkbox-group {
+    grid-template-columns: 1fr;
+  }
+}
