@@ -14,11 +14,44 @@
       ]
     },
     {
+      "id": "metabolic_hypertension",
+      "title": "Hypertension Screening",
+      "conditions": [
+        {
+          "criteria": {
+            "minAge": 18,
+            "maxAge": 39
+          },
+          "recommendation": [
+            "Age 18-40: screen every 3-5 years."
+          ]
+        },
+        {
+          "criteria": {
+            "minAge": 40
+          },
+          "recommendation": [
+            "After 40: screen every 1-2 years."
+          ]
+        }
+      ]
+    },    
+    {
+      "id": "chlamydia_gonorrhea",
+      "title": "Chlamydia / Gonorrhea",
+      "criteria": {
+        "gender": "Female",
+        "maxAge": 24,
+        "requiresCondition": "Sex worker / IV Drug user"
+      },
+      "recommendation": [
+        "Screen annually"
+      ]
+    },
+    {
       "id": "strep_b",
       "title": "Strep Agalactiae (Group B Strep)",
       "criteria": {
-        "gender": "Female",
-        "pregnant": true,
         "weeksPregnantRange": [35, 37]
       },
       "recommendation": [
@@ -41,10 +74,8 @@
       "title": "Lung Cancer",
       "criteria": {
         "minAge": 50,
-        "maxAge": 80,
-        "smoker": true,
-        "packYears": 20,
-        "quitWithinYears": 15
+        "maxAge": 80
+
       },
       "recommendation": [
         "Screen annually with low-dose CT (up to 3 times)."
@@ -55,10 +86,6 @@
       "title": "Inflammatory Bowel Disease (Colon Cancer)",
       "criteria": {
         "requiresCondition": "Inflammatory Bowel Disease"
-      },
-      "specialRules": {
-        "diagnosisOffset": 8,
-        "pscImmediate": true
       },
       "recommendation": [
         "Screen 8 years after IBD diagnosis UNLESS patient has PSC (then start at diagnosis).",
@@ -115,17 +142,6 @@
       },
       "recommendation": [
         "One-time Hep C screening if never done before."
-      ]
-    },
-    {
-      "id": "metabolic_hypertension",
-      "title": "Hypertension Screening",
-      "criteria": {
-        "minAge": 18
-      },
-      "recommendation": [
-        "Age 18-40: every 3-5 years.",
-        "After 40: every 1-2 years."
       ]
     },
     {
