@@ -6,7 +6,7 @@
       "criteria": {
         "gender": "Female",
         "pregnant": true,
-        "weeksPregnantRange": [24, 28]
+        "weeksPregnantRange": [15, 28]
       },
       "recommendation": [
         "Screen at 24 weeks of pregnancy (1-hour glucose tolerance test).",
@@ -14,48 +14,126 @@
       ]
     },
     {
-      "id": "metabolic_hypertension",
-      "title": "Hypertension Screening",
+      "id": "hiv_screening",
+      "title": "HIV Screening",
       "conditions": [
         {
           "criteria": {
-            "minAge": 18,
-            "maxAge": 39
+            "gender": "Female",
+            "pregnant": true
           },
           "recommendation": [
-            "Age 18-40: screen every 3-5 years."
+            "Screen at first prenatal visit.",
+            "Retest in the 3rd trimester."
           ]
         },
         {
           "criteria": {
-            "minAge": 40
+            "requiresCondition": "Sex Worker / IV Drug user",
+            "minAge": 15,
+            "maxAge": 64
           },
           "recommendation": [
-            "After 40: screen every 1-2 years."
+            "HIV screening annually."
           ]
         }
       ]
-    },    
+    },
     {
-      "id": "chlamydia_gonorrhea",
-      "title": "Chlamydia / Gonorrhea",
-      "criteria": {
-        "gender": "Female",
-        "maxAge": 24,
-        "requiresCondition": "Sex worker / IV Drug user"
-      },
-      "recommendation": [
-        "Screen annually"
+      "id": "hep_b",
+      "title": "Hep B",
+      "conditions": [
+        {
+          "criteria": {
+            "gender": "Female",
+            "pregnant": true
+          },
+          "recommendation": [
+            "Screen at first prenatal visit.",
+            "Check HbsAg"
+          ]
+        },
+        {
+          "criteria": {
+            "requiresCondition": "Sex Worker / IV Drug user"
+          },
+          "recommendation": [
+            "HepB (HBsAg) screen annually."
+          ]
+        }
       ]
     },
     {
-      "id": "strep_b",
-      "title": "Strep Agalactiae (Group B Strep)",
+      "id": "syphilis_screening",
+      "title": "Syphilis Screening",
+      "conditions": [
+        {
+          "criteria": {
+            "gender": "Female",
+            "pregnant": true
+          },
+          "recommendation": [
+            "Screen for syphilis at first prenatal visit."
+          ]
+        },
+        {
+          "criteria": {
+            "requiresCondition": "Sex Worker / IV Drug user"
+          },
+          "recommendation": [
+            "Syphilis screening every 3 months."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asymptomatic_bacteriuria",
+      "title": "Asymptomatic Bacteriuria",
       "criteria": {
-        "weeksPregnantRange": [35, 37]
+        "gender": "Female",
+        "pregnant": true
       },
       "recommendation": [
-        "Screen at 35-37 weeks of pregnancy."
+        "Screen at first prenatal visit.",
+        "Note: Normally we do not treat, but in pregnancy there is a risk of preterm labor",
+        "Treat: Nitrofurantoin (Do test of cure afterwards"
+      ]
+    },
+    {
+      "id": "strep_agalactiae",
+      "title": "Strep Agalactiae",
+      "criteria": {
+        "gender": "Female",
+        "pregnant": true
+      },
+      "recommendation": [
+        "Screen at 35-37 weeks"
+      ]
+    },   
+    {
+      "id": "rh_antibody",
+      "title": "RH status and antibody status",
+      "criteria": {
+        "gender": "Female",
+        "pregnant": true
+      },
+      "recommendation": [
+        "Screen at first prenatal visit.",
+        "If patient is Rh negative give Rhogam at 28 weeks",
+        "Give second dose of rhogam at first 3 days postpartum"
+      ]
+    },
+    {
+      "id": "abdominal_aortic_aneurysm",
+      "title": "Abdominal Aortic Aneurysm",
+      "criteria": {
+        "gender": "Men",
+        "minAge": 60,
+        "maxAge": 75,
+        "requiresCondition": "Smoker"
+      },
+      "recommendation": [
+        "Screen with Ultrasound"
       ]
     },
     {
@@ -75,12 +153,23 @@
       "criteria": {
         "minAge": 50,
         "maxAge": 80
-
       },
       "recommendation": [
         "Screen annually with low-dose CT (up to 3 times)."
       ]
     },
+    {
+      "id": "familial_hypercholesterolemia",
+      "title": "Familial Hypercholesterolemia (LDL Receptor Mutation)",
+      "criteria": {
+        "requiresCondition": "Familial Hypercholesterolemia"
+      },
+      "recommendation": [
+        "Check LDL levels at age 3.",
+        "Check LDL levels at age 9.",
+        "Check LDL levels at age 18."
+      ]
+    },    
     {
       "id": "ibd_colon_cancer",
       "title": "Inflammatory Bowel Disease (Colon Cancer)",
@@ -93,68 +182,316 @@
       ]
     },
     {
-      "id": "colon_cancer_general",
-      "title": "Colon Cancer (General Population)",
+      "id": "lynch_syndrome_hnpcc",
+      "title": "Lynch Syndrome HNPCC",
       "criteria": {
-        "minAge": 45,
-        "maxAge": 75
+        "requiresCondition": "Lynch Syndrome HNPCC"
       },
       "recommendation": [
-        "Colonoscopy every 10 years OR",
-        "Flexible sigmoidoscopy every 5 years OR",
-        "Flexible sigmoidoscopy every 10 years with FIT annually OR",
-        "Fecal occult blood test/FIT every year OR",
-        "CT colonography every 5 years.",
-        "If any test is positive, do colonoscopy with biopsy."
+        "Screen for colon cancer at age 20 every 1-2 years using colonoscopy.",
+        "Screen for endometrial cancer at age 30 every 1-2 years with endometrial biopsy or sampling.",
+        "Consider prophylactic hysterectomy after childbearing."
       ]
     },
     {
-      "id": "breast_cancer",
-      "title": "Breast Cancer",
+      "id": "familial_adenomatous_polyposis",
+      "title": "Familial Adenomatous Polyposis (APC Gene Mutation)",
       "criteria": {
-        "gender": "Female",
-        "minAge": 50,
-        "maxAge": 75
+        "requiresCondition": "Familial Adenomatous Polyposis (APC gene mutation)"
       },
       "recommendation": [
-        "Screen with mammogram every 2 years."
+        "Start screening at age 10 and continue screening every year."
       ]
     },
     {
-      "id": "cervical_cancer",
-      "title": "Cervical Cancer",
+      "id": "brca_mutation",
+      "title": "BRCA Mutation",
+      "conditions": [
+        {
+          "criteria": {
+            "requiresCondition": "BRCA Mutation",
+            "minAge": 25,
+            "maxAge": 29
+          },
+          "recommendation": [
+            "Annual breast MRI."
+          ]
+        },
+        {
+          "criteria": {
+            "requiresCondition": "BRCA Mutation",
+            "minAge": 30
+          },
+          "recommendation": [
+            "Annual breast MRI.",
+            "Annual mammography."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chlamydia_gonorrhea_screening",
+      "title": "Chlamydia/Gonorrhea Screening",
       "criteria": {
-        "gender": "Female",
-        "minAge": 30,
-        "maxAge": 65
+        "gender": "Female"
       },
       "recommendation": [
-        "Pap smear + HPV co-testing every 5 years OR Pap smear alone every 3 years OR HPV testing every 5 years.",
-        "Stop screening at 65 if no history of cervical dysplasia/cancer and 3 negative pap smears in a row."
+        "Chlamydia/Gonorrhea screening annually."
+      ]
+    },  
+    {
+      "id": "metabolic_hypertension",
+      "title": "Hypertension Screening",
+      "conditions": [
+        {
+          "criteria": {
+            "minAge": 18,
+            "maxAge": 39
+          },
+          "recommendation": [
+            "Screen every 3-5 years until age 40.",
+            "After 40: screen every 1-2 years."
+          ]
+        },
+        {
+          "criteria": {
+            "minAge": 40
+          },
+          "recommendation": [
+            "Screen every 1-2 years."
+          ]
+        }
+      ]
+    },
+    {
+      "screenings": [
+        {
+          "id": "diabetes_obese",
+          "title": "Diabetes Screening (Obese)",
+          "criteria": {
+            "requiresCondition": "Obese",
+            "minAge": 40,
+            "maxAge": 70
+          },
+          "recommendation": [
+            "Screen for diabetes."
+          ]
+        },
+        {
+          "id": "diabetes_htn",
+          "title": "Diabetes Screening (Hypertension)",
+          "criteria": {
+            "requiresCondition": "Hypertension",
+            "minAge": 45
+          },
+          "recommendation": [
+            "Screen every 6 months."
+          ]
+        },
+        {
+          "id": "osteoporosis",
+          "title": "Osteoporosis",
+          "conditions": [
+            {
+              "criteria": {
+                "gender": "Female",
+                "minAge": 65
+              },
+              "recommendation": [
+                "Screen with DEXA scan (bone density)."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hyperlipidemia_men",
+          "title": "Hyperlipidemia Screening",
+          "conditions": [
+            {
+              "criteria": {
+                "gender": "Male",
+                "minAge": 20,
+                "maxAge": 45
+              },
+              "recommendation": [
+                "Screen every 5 years."
+              ]
+            },
+            {
+              "criteria": {
+                "gender": "Male",
+                "minAge": 45,
+                "maxAge": 65
+              },
+              "recommendation": [
+                "Screen every 1-2 years."
+              ]
+            },
+            {
+              "criteria": {
+                "gender": "Male",
+                "minAge": 65
+              },
+              "recommendation": [
+                "Screen every year."
+              ]
+            },
+            {
+              "criteria": {
+                "gender": "Female",
+                "minAge": 20,
+                "maxAge": 55
+              },
+              "recommendation": [
+                "Screen every 5 years."
+              ]
+            },
+            {
+              "criteria": {
+                "gender": "Female",
+                "minAge": 55,
+                "maxAge": 65
+              },
+              "recommendation": [
+                "Screen every 1-2 years."
+              ]
+            },
+            {
+              "criteria": {
+                "gender": "Female",
+                "minAge": 65
+              },
+              "recommendation": [
+                "Screen every year."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hyperlipidemia_diabetic",
+          "title": "Hyperlipidemia Screening (Diabetic)",
+          "criteria": {
+            "requiresCondition": "Diabetic"
+          },
+          "recommendation": [
+            "Screen annually.",
+            "If LDL is high, put on statin."
+          ]
+        }
+      ]
+    },
+    {
+      "screenings": [
+        {
+          "id": "colon_cancer",
+          "title": "Colon Cancer",
+          "criteria": {
+            "minAge": 45,
+            "maxAge": 75
+          },
+          "recommendation": [
+            "Colonoscopy every 10 years OR",
+            "Flexible sigmoidoscopy every 5 years OR",
+            "Flexible sigmoidoscopy every 10 years with FIT test (Fecal Immunochemical test every year) OR",
+            "Fecal occult blood test or FIT every year OR",
+            "CT colonography every 5 years.",
+            "If any test is positive, proceed to colonoscopy with biopsy."
+          ]
+        },
+        {
+          "id": "breast_cancer",
+          "title": "Breast Cancer",
+          "conditions": [
+            {
+              "criteria": {
+                "minAge": 35,
+                "maxAge": 49
+              },
+              "recommendation": [
+                "Start screening at 30 every year",
+                "At age 50-75 (Screen every 2 years, screen with mammogram"
+              ]
+            },
+            {
+              "criteria": {
+                "minAge": 50,
+                "maxAge": 75
+              },
+              "recommendation": [
+                "Screen with mammogram every 2 years."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cervical_cancer",
+          "title": "Cervical Cancer",
+          "conditions": [
+            {
+              "criteria": {
+                "minAge": 21,
+                "maxAge": 29
+              },
+              "recommendation": [
+                "Pap smear every 3 years."
+              ]
+            },
+            {
+              "criteria": {
+                "minAge": 30,
+                "maxAge": 65
+              },
+              "recommendation": [
+                "Pap smear and HPV co-testing every 5 years OR",
+                "Pap smear every 3 years OR",
+                "HPV testing every 5 years."
+              ]
+            }
+          ]
+        }
       ]
     },
     {
       "id": "hep_c",
-      "title": "Hepatitis C (One-time Screening)",
+      "title": "Hep C",
       "criteria": {
         "minAge": 18,
         "maxAge": 79
       },
       "recommendation": [
-        "One-time Hep C screening if never done before."
+        "One Hep C screening if not done before"
       ]
     },
     {
-      "id": "hiv_pregnancy",
-      "title": "HIV Screening",
+      "id": "language_delay",
+      "title": "Language Delay (Kid)",
       "criteria": {
-        "gender": "Female",
-        "pregnant": true
+        "requiresCondition": "Language Delay (Kid)"
       },
       "recommendation": [
-        "Screen at first prenatal visit.",
-        "Retest in the 3rd trimester."
+        "Screen with audiometry."
       ]
-    }    
+    },
+    {
+      "id": "lazy_eye",
+      "title": "Amblyopia (Lazy Eye)",
+      "criteria": {
+        "minAge": 3,
+        "maxAge": 5
+      },
+      "recommendation": [
+        "Screen for amblyopia (lazy eye)."
+      ]
+    },
+    {
+      "id": "chlamydia_gonorrhea_young",
+      "title": "Chlamydia and Gonorrhea Screening",
+      "criteria": {
+        "maxAge": 24
+      },
+      "recommendation": [
+        "Screen for chlamydia and gonorrhea."
+      ]
+    }
   ]
 }

@@ -8,6 +8,9 @@ const options = [
   "Familial Hypercholesterolemia",
   "Lynch Syndrome HNPCC",
   "Inflammatory Bowel Disease",
+  "BRCA Mutation",
+  "Diabetic",
+  "Language Delay (Kid)"
 ];
 
 const ScreeningSurvey = ({ onSubmit }) => {
