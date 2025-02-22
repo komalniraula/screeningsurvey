@@ -28,13 +28,13 @@ const App = () => {
             recommendations.map((screen) => (
               <div key={screen.id}>
                 <h3>{screen.title}</h3>
-                <ul>
+                <div>
                   {screen.recommendation.map((rec, index) => (
-                    <li key={index}>
-                      <input type="checkbox" /> {rec}
-                    </li>
+                    <label key={index} style={{ display: "block", marginBottom: "5px" }}>
+                      <input type="checkbox" style={{ marginRight: "8px" }} /> {rec}
+                    </label>
                   ))}
-                </ul>
+                </div>
               </div>
             ))
           ) : (
