@@ -1,9 +1,8 @@
 To run the files locally, 
 1. Install Node.js - https://nodejs.org/en
-2. After installation run following commands in terminal
+2. After installation run following commands in terminal. Both of the above command should return a version number
     - node -v
     - npm -v
-(Both of the above command should return a version number)
 3. Run:
     - npm install
     - npm install react react-dom tailwindcss 
