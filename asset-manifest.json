@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/screeningsurvey/static/css/main.b4935d3f.css",
+    "main.js": "/screeningsurvey/static/js/main.7accbb06.js",
+    "index.html": "/screeningsurvey/index.html",
+    "main.b4935d3f.css.map": "/screeningsurvey/static/css/main.b4935d3f.css.map",
+    "main.7accbb06.js.map": "/screeningsurvey/static/js/main.7accbb06.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b4935d3f.css",
+    "static/js/main.7accbb06.js"
+  ]
+}
