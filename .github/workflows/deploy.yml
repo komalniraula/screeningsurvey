@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main  # Runs deployment every time you push to main
+      - main  # Deploys every time changes are pushed to main
 
 jobs:
   build-and-deploy:
@@ -27,6 +27,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}  
           publish_dir: ./build
-          publish_branch: gh-pages  # ✅ Ensures it deploys to gh-pages
+          publish_branch: gh-pages
