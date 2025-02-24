@@ -3,14 +3,17 @@ import React, { useState } from "react";
 const options = [
   "Smoker",
   "Sex worker / IV Drug user",
+  "Diabetic",
+  "Language Delay (Kid)"
+];
+
+const geneticDiseases = [
   "Familial Adenomatous Polyposis (APC gene mutation)",
   "Familial Adenopolyposis",
   "Familial Hypercholesterolemia",
   "Lynch Syndrome HNPCC",
   "Inflammatory Bowel Disease",
-  "BRCA Mutation",
-  "Diabetic",
-  "Language Delay (Kid)"
+  "BRCA Mutation"
 ];
 
 const ScreeningSurvey = ({ onSubmit }) => {
@@ -20,15 +23,14 @@ const ScreeningSurvey = ({ onSubmit }) => {
     pregnant: "",
     weeksPregnant: "",
     selectedOptions: [],
+    selectedGeneticDiseases: []
   });
 
-  // Generic handler for input/select changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle checkbox toggle for options
   const handleOptionChange = (option) => {
     setFormData((prev) => {
       const { selectedOptions } = prev;
@@ -41,13 +43,25 @@ const ScreeningSurvey = ({ onSubmit }) => {
     });
   };
 
+  const handleGeneticDiseaseChange = (disease) => {
+    setFormData((prev) => {
+      const { selectedGeneticDiseases } = prev;
+      return {
+        ...prev,
+        selectedGeneticDiseases: selectedGeneticDiseases.includes(disease)
+          ? selectedGeneticDiseases.filter((d) => d !== disease)
+          : [...selectedGeneticDiseases, disease],
+      };
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted with:", formData);
     onSubmit(formData);
   };
 
-  const { age, gender, pregnant, weeksPregnant, selectedOptions } = formData;
+  const { age, gender, pregnant, weeksPregnant, selectedOptions, selectedGeneticDiseases } = formData;
 
   return (
     <div className="survey-container">
@@ -59,7 +73,6 @@ const ScreeningSurvey = ({ onSubmit }) => {
       <hr />
 
       <form onSubmit={handleSubmit}>
-        {/* Age Section */}
         <div className="section">
           <label htmlFor="age">Age:</label>
           <div className="input-container">
@@ -77,7 +90,6 @@ const ScreeningSurvey = ({ onSubmit }) => {
         </div>
         <hr />
 
-        {/* Gender Section */}
         <div className="section">
           <label htmlFor="gender">Gender:</label>
           <select
@@ -94,7 +106,6 @@ const ScreeningSurvey = ({ onSubmit }) => {
           </select>
         </div>
 
-        {/* Pregnancy Section (only for Female) */}
         {gender === "Female" && (
           <>
             <hr />
@@ -147,7 +158,6 @@ const ScreeningSurvey = ({ onSubmit }) => {
           </>
         )}
 
-        {/* Options Section */}
         <div className="section">
           <label className="checkbox-title">Select all that apply to you:</label>
           <div className="checkbox-group">
@@ -160,6 +170,23 @@ const ScreeningSurvey = ({ onSubmit }) => {
                   onChange={() => handleOptionChange(option)}
                 />
                 <label htmlFor={option}>{option}</label>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="section">
+          <label className="checkbox-title">Any Genetic Disease:</label>
+          <div className="checkbox-group">
+            {geneticDiseases.map((disease) => (
+              <div key={disease} className="checkbox-item">
+                <input
+                  type="checkbox"
+                  id={disease}
+                  checked={selectedGeneticDiseases.includes(disease)}
+                  onChange={() => handleGeneticDiseaseChange(disease)}
+                />
+                <label htmlFor={disease}>{disease}</label>
               </div>
             ))}
           </div>

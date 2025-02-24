@@ -16,7 +16,10 @@ function parseWeeksRange(weeksStr) {
 
 // Helper function to check if userData matches a given criteria
 const matchesCriteria = (userData, criteria) => {
-  const { age, gender, pregnant, weeksPregnant, selectedOptions } = userData;
+  const { age, gender, pregnant, weeksPregnant, selectedOptions, selectedGeneticDiseases } = userData;
+
+  // Merge selected options and genetic diseases into a single array
+  const allConditions = [...selectedOptions, ...selectedGeneticDiseases];
 
   // Age check
   if (criteria.minAge !== undefined && age < criteria.minAge) return false;
@@ -37,8 +40,8 @@ const matchesCriteria = (userData, criteria) => {
     if (userMax < reqMin || userMin > reqMax) return false;
   }
 
-  // Check for specific condition requirement (e.g., "Inflammatory Bowel Disease")
-  if (criteria.requiresCondition && !selectedOptions.includes(criteria.requiresCondition)) {
+  // Check for specific condition requirement (general and genetic)
+  if (criteria.requiresCondition && !allConditions.includes(criteria.requiresCondition)) {
     return false;
   }
 
